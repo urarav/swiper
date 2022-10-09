@@ -13,17 +13,20 @@ li {
   display: grid;
   place-content: center;
   background-color: #718190;
-  .swipper {
+
+  .swiper {
     display: flex;
     width: 846px;
     height: 472px;
     position: relative;
     overflow: hidden;
+
     &-list {
       display: flex;
       position: absolute;
       left: 0;
     }
+
     &-circle {
       position: absolute;
       bottom: 10px;
@@ -32,6 +35,7 @@ li {
       display: flex;
       gap: 5px;
       justify-content: center;
+
       li {
         width: 10px;
         height: 10px;
@@ -39,11 +43,13 @@ li {
         border-radius: 50%;
         cursor: pointer;
         transition: all 0.4s;
+
         &.is-active {
           background-color: white;
         }
       }
     }
+
     &-arrow__left,
     &-arrow__right {
       visibility: hidden;
@@ -61,13 +67,16 @@ li {
       top: 50%;
       transition: all 0.25s;
       transform: translateY(-50%);
+
       &.is-disabled {
         cursor: not-allowed;
       }
     }
+
     &-arrow__left {
       left: 0;
       border-radius: 0 50% 50% 0;
+
       &::before {
         content: "";
         height: 12px;
@@ -78,9 +87,11 @@ li {
         border-bottom: 2px #fff solid;
       }
     }
+
     &-arrow__right {
       right: 0;
       border-radius: 50% 0 0 50%;
+
       &::before {
         content: "";
         height: 12px;
