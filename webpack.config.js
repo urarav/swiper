@@ -26,11 +26,7 @@ module.exports = {
       },
       {
         test: /\.stylus$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-      {
-        test: /\.stylus$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ["style-loader", "css-loader", "stylus-loader"],
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp)$/,
