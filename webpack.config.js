@@ -1,9 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ESLintWebpackPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  entry: path.resolve(__dirname, "index.js"),
+  entry: path.resolve(__dirname, "src/index.js"),
   output: {
     // path: path.resolve(__dirname, "dist"),
     path: undefined,
@@ -51,11 +52,26 @@ module.exports = {
         test: /\.html$/,
         loader: "html-loader",
       },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "babel-loader",
+        options: {
+          cacheDirectory: true,
+          cacheCompression: false,
+        },
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "index.html"),
+      template: path.resolve(__dirname, "public/index.html"),
+    }),
+    new ESLintWebpackPlugin({
+      context: path.resolve(__dirname, "src"),
+      exclude: "node_modules",
+      cache: true,
+      cacheLocation: path.resolve(__dirname, "node_modules/.cache/eslitcache"),
     }),
   ],
   devServer: {

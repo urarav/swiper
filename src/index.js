@@ -1,5 +1,5 @@
 import { animate } from "./utils/animate";
-import "./main.scss";
+import "./styles/main.scss";
 
 const prevArrow = document.querySelector(".swipper-arrow__left");
 const nextArrow = document.querySelector(".swipper-arrow__right");
@@ -74,7 +74,6 @@ nextArrow.addEventListener("click", next);
 prevArrow.addEventListener("click", prev);
 swipperCircle.addEventListener("click", circleClick);
 swipper.addEventListener("mouseenter", () => {
-  console.log(111);
   nextArrow.style.visibility = "visible";
   prevArrow.style.visibility = "visible";
   clearInterval(timer);
